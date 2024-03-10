@@ -1,0 +1,78 @@
+body {
+    background-color: black;
+}
+
+#court {
+    background-color: green;
+    height: 600px;
+    width: 800px;
+    border-radius: 5px;
+    border-color: white;
+    border-style: solid;
+    position: relative;
+}
+
+#net{
+    border-radius: 10px;
+    border-color: white;
+    border-style: solid;
+    height: 600px;
+    position: absolute;
+    left: 400px;
+    top: 0;
+    display: inline-flex;
+}
+
+#ball{
+    position: absolute;
+    left: 400px;
+    top: 300px;
+    transition: all .01 ease;
+}
+
+#count{
+    color: white;
+}
+
+#scoreL{
+    color: white;
+    display: inline;
+    font-size: 48pt;
+}
+
+#scoreR{
+    color: white;
+    display: inline;
+    text-align: right;
+    font-size: 48pt;
+    margin-left: 750px;
+}
+
+#paddleL{
+    border: red;
+    border-style: solid;
+    /*left: 20px;*/
+    border-radius: 10px;
+    height: 75px;
+    top: 263px;
+    width: 0;
+    position: absolute;
+}
+
+#paddleR{
+    border: blue;
+    border-style: solid;
+    left: 795px;
+    border-radius: 10px;
+    height: 75px;
+    width: 0;
+    position: absolute;
+    top: 263px;
+}
+
+#pbut{
+    display: inline;
+    position: absolute;
+    left: 820px;
+    top: 5px;
+}
