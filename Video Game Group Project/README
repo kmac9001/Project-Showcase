@@ -1,0 +1,40 @@
+This program requires that you have vorbis-tools installed.
+Since we play .ogg music, the build defers to ogg123.
+As long as you can use ogg123 from the command line, the music
+should be able to play correctly.
+
+There may be sound issues depending on your installation.
+
+Press Escape to instantly quit.
+
+*****PROGRESS*******
+- music fixed
+- new music
+- levels 3 and 4 unjanked afaik
+- helpers carry jibby better, can jump with jibby
+- collisions cleaned even more
+********************
+
+Here is what each member accomplished:
+Devin: Text implemented, added dialogues, current player indicator, bug fixes
+Chris: Added instructional texts, bug fixes
+Kevin: Camera fix, bug fixes
+William: Graphics and level 0 (tutorial).
+
+(We implemented a cheat. By pressing R, you can force a level advance.
+Obviously, since level 5 doesn't exist, pressing R on level 5 will crash
+the game. We would take this out, but figured the graders may appreciate
+not having to go through each level over and over. Also K resets the 
+level in exchange for a life. This was used for testing but you may need
+it in case something unexpected happens)
+
+J to toggle superjumps and G for god mode.
+
+********TODO********
+- track down memory leaks
+- inconsistent jumps
+- differentiate dialogue with instruction text via font/color
+- more content
+********************
+
+That's all for now.
