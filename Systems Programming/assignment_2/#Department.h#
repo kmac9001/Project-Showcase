@@ -1,0 +1,29 @@
+/**
+ * Kevin McCreary
+ */
+
+/**
+ * C versino of a Department of a Company
+ */
+
+#ifndef _DEPARTMENT_H
+#define _DEPARTMENT_H
+
+typedef struct {
+
+  char* deptCode;
+  char* deptName;
+  char* mgrEmpId;
+
+  Employee employees[100];
+  Employee manager;
+
+  int noEmlpoyees
+
+} Department;
+
+Department* alloc_department(char* deptCode, char* deptName, char* mgrEmpId);
+
+void addEmployee(Employee employee, Department* dept);
+
+#endif

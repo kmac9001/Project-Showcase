@@ -1,0 +1,37 @@
+/**
+ * Kevin McCreary
+ */
+
+#include <stdlib.h>
+#include "Employee.h"
+#include "Department.h"
+
+char* resize_char(char* str_to_re){
+
+  char* re_str = realloc(str_to_re, (2 * sizeof(str_to_re)) + 1);
+  if(re_str)
+    return re_str;
+  else
+    return str_to_re;
+
+}
+
+Employee* resize_emp(Employee* emp_to_re){
+
+  Employee* re_emp = realloc(emp_to_re, (2 * sizeof(emp_to_re)));
+  if(re_emp)
+    return re_emp;
+  else
+    return emp_to_re;
+
+}
+
+Department* resize_dep(Department* dep_to_re){
+
+  Department* re_dep = realloc(dep_to_re, (2 * sizeof(dep_to_re)));
+  if(re_dep)
+    return re_dep;
+  else
+    return dep_to_re;
+
+}

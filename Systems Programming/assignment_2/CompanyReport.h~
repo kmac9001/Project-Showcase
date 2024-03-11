@@ -1,0 +1,15 @@
+/**
+ * Kevin McCreary
+ */
+
+
+#ifndef _COMPNAYREPORT_H
+#define _COMPANYREPORT_H
+
+#include "Compnay.h"
+
+void loadDepts(FILE* input_stream, Company* company);
+
+void loadEmps(FILE* input_stream, Company* company);
+
+#endif

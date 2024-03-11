@@ -1,0 +1,112 @@
+/**
+ * Kevin McCreary
+ */
+
+#include "Employee.h"
+#include "EmployeeFileReader.h"
+#include <math.h>
+#include <limits.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+Employee* readEmployee(FILE* input_stream){
+
+  char employeeIdChar[4];
+  char lastNameChar[16];
+  char firstNameChar[23];
+
+  int x;
+
+  /**
+   * Parse backwards to switch endianness
+   */
+  char temp;
+ 
+  for(x = 0; x < (sizeof(employeeIdChar)/sizeof(char))-1; x++){
+    printf("id char\n");
+      temp = getc(input_stream);
+      if(temp == EOF)
+	return NULL;
+    employeeIdChar[x] = temp;
+  }
+  employeeIdChar[3] = '\0';
+  char* employeeId = employeeIdChar;
+  printf("%s\n", employeeId);
+
+  char empIndicator = getc(input_stream);
+  printf("%c\n", empIndicator);
+  
+  char deptCode = getc(input_stream);
+  printf("%c\n", deptCode);
+
+  for(x = 0; x < (sizeof(lastNameChar)/sizeof(char))-2; x++){
+    lastNameChar[x] = getc(input_stream);
+  }
+  lastNameChar[15] = '\0';
+  char* lastName = lastNameChar;
+  printf("%s\n", lastName);
+
+for(x = 0; x < (sizeof(firstNameChar)/sizeof(char))-2; x++){
+    firstNameChar[x] = getc(input_stream);
+  }
+  firstNameChar[20] = '\0';
+  char* firstName = firstNameChar;
+  printf("%s\n", firstName);
+
+  /*
+  float sal = 0;
+  char floater[4];
+  for(int y = 0; y < 4; y++){
+    floater[y] = getc(input_stream);
+    sal += (float)floater[y]*pow(SCHAR_MAX, y);
+  }
+  char* stuff = floater;
+  printf("%s\t%s\n", floater, stuff);
+  int salary = (float)atoi("Ap");
+  printf("%i\n", salary);
+  */
+
+  float salary = 0;
+  fread(&salary, 1, sizeof(salary), input_stream);
+  
+  printf("%f\n", salary);
+  int month = (int) getc(input_stream);
+  printf("%i\n", month);
+  int day = (int) getc(input_stream);
+  printf("%i\n", day);
+
+  /*
+  char temp_year[2];
+  temp_year[1] = getc(input_stream);
+  temp_year[0] = getc(input_stream);
+  short year = (short) atoi(temp_year);
+  */
+
+  short year = 1900;
+  fread(&year, 1, sizeof(year), input_stream);
+
+  hire_date* hireDate = alloc_hire_date(day, month, year);
+  printf("%i/%i/%i\n", hireDate->month, hireDate->day, hireDate->year);
+
+  /*
+  char temp_vacation[2];
+  temp_vacation[1] = getc(input_stream);
+  temp_vacation[0] = getc(input_stream);
+  short vacationDays = (short) atoi(temp_vacation);
+  printf("%i\n", vacationDays);
+  */
+  short vacationDays = 0;
+  fread(&vacationDays, 1, sizeof(vacationDays), input_stream);
+  printf("%i\n", vacationDays);
+  
+  char training = getc(input_stream);
+  printf("%c\n", training);
+
+  Employee* employee;
+
+  employee = alloc_employee(employeeId, empIndicator, deptCode, firstName, lastName, salary, hireDate, vacationDays, training);
+
+  return employee;
+
+}

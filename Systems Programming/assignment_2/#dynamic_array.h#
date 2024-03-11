@@ -1,0 +1,42 @@
+/**
+ * Kevin McCreary
+ */
+
+/**
+ * Functions and structs to allow dynamic arrays
+ */
+
+#include <stdlib.h>
+
+#ifndef _DYNAMIC_ARRAY_H
+#define _DYNAMIC_ARRAY_H
+
+typedef struct {
+
+  int array[];
+  int size;
+  
+}dynamic_int;
+
+/**
+ * Create a new dynamic int array struct.
+ * No args = default size (5)
+ * int arg = starting size of array
+ */
+dynamic_int* new_int_array();
+dynamic_int* new_int_array(int size);
+
+/**
+ * Add an item to the array
+ * one arg = insert at the end
+ * two args = insert at location arg 2
+ */
+void insert(int x);
+void insert(int x, int loc);
+
+/**
+ * Function to replace the struct's array
+ * with a larger copy o
+
+
+#endif

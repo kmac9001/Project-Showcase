@@ -1,0 +1,29 @@
+/**
+ * Kevin McCreary
+ */
+
+/**
+ * C versino of a Department of an Employee
+ */
+
+#ifndef _EMPLOYEE_H
+#define _EMPLOYEE_H
+
+typedef struct {
+
+  char* firstName;
+  char* lastName;
+  char* employeeId;
+  char* employeeIndicator;
+  char* deptCode;
+  float salary;
+  char* hireDate;
+  short vacationDays;
+  char training;
+
+} Employee;
+
+Employee* Employee(char* employeeId, char* employeeIndicator, char* deptCode, char* firstName, char* lastName, float salary, char* hireDate, short vacationDays, char training);
+
+
+#endif
